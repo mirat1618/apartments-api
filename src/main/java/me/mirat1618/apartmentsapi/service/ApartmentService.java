@@ -1,6 +1,6 @@
 package me.mirat1618.apartmentsapi.service;
 
-import me.mirat1618.apartmentsapi.exception.ApartmentNotFoundException;
+import me.mirat1618.apartmentsapi.exception.RecordNotFoundException;
 import me.mirat1618.apartmentsapi.model.Apartment;
 import me.mirat1618.apartmentsapi.repo.ApartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class ApartmentService {
     }
 
     public Apartment findApartmentById(Long id) {
-        return repo.findById(id).orElseThrow(() -> new ApartmentNotFoundException("Apartment with an ID of " + id + " was not found in the database"));
+        return repo.findById(id).orElseThrow(() -> new RecordNotFoundException("Apartment with an ID of " + id + " was not found in the database"));
     }
 
     public Apartment createApartment(Apartment apartment) {
