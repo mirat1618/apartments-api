@@ -1,5 +1,6 @@
 package me.mirat1618.apartmentsapi.controller;
 
+import me.mirat1618.apartmentsapi.model.Apartment;
 import me.mirat1618.apartmentsapi.model.ApartmentComplex;
 import me.mirat1618.apartmentsapi.service.ApartmentComplexService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,15 @@ public class ApartmentComplexController {
     @DeleteMapping("/{id}")
     public void deleteApartmentComplex(@PathVariable("id") Long id) {
         service.deleteApartmentComplex(id);
+    }
+
+    @PostMapping("/{id}")
+    public ApartmentComplex addApartment(@PathVariable("id") Long apartmentComplexId, @RequestBody Apartment apartment) {
+        return service.addApartment(apartmentComplexId, apartment);
+    }
+
+    @DeleteMapping("/{apartmentComplexId}/apartment/{apartmentId}")
+    public ApartmentComplex removeApartment(@PathVariable("apartmentComplexId") Long apartmentComplexId, @PathVariable("apartmentId") Long apartmentId) {
+        return service.removeApartment(apartmentComplexId, apartmentId);
     }
 }

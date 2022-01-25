@@ -1,7 +1,6 @@
 package me.mirat1618.apartmentsapi.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +19,7 @@ import java.util.Set;
 @Table(name = "apartment_complex", uniqueConstraints = {
         @UniqueConstraint(name = "apartment_complex_title_unique", columnNames = "title")
 })
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ApartmentComplex {
     @Id
     @SequenceGenerator(name="apartment_complex_sequence", sequenceName = "apartment_complex_sequence", allocationSize = 1)
@@ -34,7 +34,6 @@ public class ApartmentComplex {
     @Column(name = "address", nullable = false)
     private String address;
 
-    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "apartmentComplex")
     private List<Apartment> apartments;
 
