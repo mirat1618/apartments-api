@@ -46,12 +46,9 @@ public class ApartmentComplexService {
         ApartmentComplex apartmentComplex = apartmentComplexRepo.findById(apartmentComplexId).orElseThrow(() ->
                 new RecordNotFoundException("An apartment complex with an ID of " + apartmentComplexId + " was not found in the database"));
 
-
         apartment.setApartmentComplex(apartmentComplex);  // set parent (apartment complex) of the apartment
-        apartmentRepo.save(apartment); // save the apartment to our database
-
-        apartmentComplex.getApartments().add(apartment); // add newly saved apartment to its respective apartment complex
-        apartmentComplexRepo.save(apartmentComplex); // update the apartment complex in the database
+        Apartment addedApartment = apartmentRepo.save(apartment); // save the apartment to the database
+        apartmentComplex.getApartments().add(addedApartment); // add the apartment to the complex to return it later
 
         return apartmentComplex; // return the updated version of the apartment complex
     }
