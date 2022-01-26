@@ -70,6 +70,8 @@ public class ApartmentComplexService {
             apartment.setApartmentComplex(null); // destroy the link between them
             apartmentRepo.save(apartment); // saving changes to the database
         }
+
+        apartmentComplex.getApartments().removeIf((apartment -> apartment.getId() == apartmentId));
         return apartmentComplex; // return the updated version
     }
 
