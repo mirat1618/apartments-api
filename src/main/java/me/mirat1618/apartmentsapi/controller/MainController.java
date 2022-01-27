@@ -4,12 +4,14 @@ import me.mirat1618.apartmentsapi.model.Apartment;
 import me.mirat1618.apartmentsapi.model.ApartmentComplex;
 import me.mirat1618.apartmentsapi.service.ApartmentComplexService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:9002")
 public class MainController {
     private ApartmentComplexService apartmentComplexService;
 
