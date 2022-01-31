@@ -18,7 +18,7 @@ public class ApartmentService {
     }
 
     public List<Apartment> findAllApartments() {
-        return repo.findAll();
+        return repo.findAllByOrderByIdAsc();
     }
 
     public Apartment findApartmentById(Long id) {
