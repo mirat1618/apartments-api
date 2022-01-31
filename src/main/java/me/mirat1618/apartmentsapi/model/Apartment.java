@@ -48,12 +48,13 @@ public class Apartment {
     @JoinColumn(name = "apartment_complex_id")
     private ApartmentComplex apartmentComplex;
 
-    public Apartment(int number, int floor, float squareMeters, int numberOfBedrooms, boolean hasDishwasher, boolean hasWashingMachine, float rentPrice, ApartmentComplex apartmentComplex) {
+    public Apartment(int number, int floor, float squareMeters, int numberOfBedrooms, boolean hasWashingMachine, boolean hasDishwasher, float rentPrice, ApartmentComplex apartmentComplex) {
         this.number = number;
+        this.floor = floor;
         this.squareMeters = squareMeters;
         this.numberOfBedrooms = numberOfBedrooms;
-        this.hasDishwasher = hasDishwasher;
         this.hasWashingMachine = hasWashingMachine;
+        this.hasDishwasher = hasDishwasher;
         this.rentPrice = rentPrice;
         this.apartmentComplex = apartmentComplex;
     }

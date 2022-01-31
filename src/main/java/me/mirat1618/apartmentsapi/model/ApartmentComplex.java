@@ -30,16 +30,19 @@ public class ApartmentComplex {
     @Column(name = "title", nullable = false)
     private String title;
 
-
     @Column(name = "address", nullable = false)
     private String address;
+
+    @Column(name = "image_url", nullable = false)
+    private String imageUrl;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "apartmentComplex")
     private List<Apartment> apartments;
 
-    public ApartmentComplex(String title, String address) {
+    public ApartmentComplex(String title, String address, String imageUrl) {
         this.title = title;
         this.address = address;
+        this.imageUrl = imageUrl;
         this.apartments = new LinkedList<>();
     }
 
@@ -49,6 +52,8 @@ public class ApartmentComplex {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", address='" + address + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", apartments=" + apartments +
                 '}';
     }
 }

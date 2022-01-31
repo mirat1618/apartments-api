@@ -21,8 +21,8 @@ public class DatabaseSeeder implements CommandLineRunner {
 
     @Override
     public void run(String[] args) {
-        ApartmentComplex apartmentComplex1 = apartmentComplexService.createApartmentComplex(new ApartmentComplex("Клубный Дом \"Соты\"", "ул. Цюрупы, д. 30"));
-        ApartmentComplex apartmentComplex2 = apartmentComplexService.createApartmentComplex(new ApartmentComplex("Идель-Тауэр", "пр. Октября, д. 107а"));
+        ApartmentComplex apartmentComplex1 = apartmentComplexService.createApartmentComplex(new ApartmentComplex("Клубный Дом \"Соты\"", "ул. Цюрупы, д. 30", "https://i.ibb.co/MnTBySV/klubnyy-dom-soty-ufa-jk-759427115-10.jpg"));
+        ApartmentComplex apartmentComplex2 = apartmentComplexService.createApartmentComplex(new ApartmentComplex("Идель-Тауэр", "пр. Октября, д. 107а", "https://i.ibb.co/K03sMQd/9db993961819453e1b7b0fd90d55cf08.png"));
 
         Apartment apartment1 = new Apartment(39, 4, new Float(34.7), 1, true, false, 27000, apartmentComplex1);
         Apartment apartment2 = new Apartment(27, 6, new Float(55), 1, true, false, 25000, apartmentComplex1);
