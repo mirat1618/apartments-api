@@ -24,7 +24,7 @@ public class ApartmentComplexService {
     }
 
     public List<ApartmentComplex> findAllApartmentComplexes() {
-        return apartmentComplexRepo.findAll();
+        return apartmentComplexRepo.findAllByOrderByIdAsc();
     }
 
     public ApartmentComplex findApartmentComplexById(Long id) {
