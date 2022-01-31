@@ -34,8 +34,9 @@ public class ApartmentComplexController {
         return service.createApartmentComplex(complex);
     }
 
-    @PutMapping
-    public ApartmentComplex updateApartmentComplex(@RequestBody ApartmentComplex complex) {
+    @PutMapping("/{id}")
+    public ApartmentComplex updateApartmentComplex(@PathVariable("id") Long id, @RequestBody ApartmentComplex complex) {
+        complex.setId(id);
         return service.updateApartmentComplex(complex);
     }
 

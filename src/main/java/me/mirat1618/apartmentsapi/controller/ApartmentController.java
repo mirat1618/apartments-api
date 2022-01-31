@@ -32,8 +32,9 @@ public class ApartmentController {
         return service.createApartment(apartment);
     }
 
-    @PutMapping
-    public Apartment updateApartment(@RequestBody Apartment apartment) {
+    @PutMapping("/{id}")
+    public Apartment updateApartment(@PathVariable("id") Long id, @RequestBody Apartment apartment) {
+        apartment.setId(id);
         return service.updateApartment(apartment);
     }
 
