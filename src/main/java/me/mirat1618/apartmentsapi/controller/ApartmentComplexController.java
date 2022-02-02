@@ -50,7 +50,7 @@ public class ApartmentComplexController {
         return service.addApartment(apartmentComplexId, apartment);
     }
 
-    @DeleteMapping("/{apartmentComplexId}/apartment/{apartmentId}")
+    @DeleteMapping("/{apartmentComplexId}/apartments/{apartmentId}")
     public ApartmentComplex removeApartment(@PathVariable("apartmentComplexId") Long apartmentComplexId, @PathVariable("apartmentId") Long apartmentId) {
         return service.removeApartment(apartmentComplexId, apartmentId);
     }

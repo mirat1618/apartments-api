@@ -39,7 +39,7 @@ public class ApartmentController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteApartment(@PathVariable("id") long id) {
+    public void deleteApartment(@PathVariable("id") Long id) {
         service.deleteApartment(id);
     }
 }
