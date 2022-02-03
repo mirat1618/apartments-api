@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9002")
+@CrossOrigin(origins = {"http://localhost:9002", "https://apartments-frontend-ui.herokuapp.com"})
 @RequestMapping("/apartment-complexes")
 public class ApartmentComplexController {
     private ApartmentComplexService service;
