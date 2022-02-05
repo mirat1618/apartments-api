@@ -45,7 +45,7 @@ public class ApartmentComplexController {
         service.deleteApartmentComplex(id);
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/{id}/apartments")
     public ApartmentComplex addApartment(@PathVariable("id") Long apartmentComplexId, @RequestBody Apartment apartment) {
         return service.addApartment(apartmentComplexId, apartment);
     }
