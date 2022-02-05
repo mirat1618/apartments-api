@@ -3,7 +3,7 @@
 - Деплоймент UI на Heroku: https://apartments-frontend-ui.herokuapp.com/
 - Деплоймент API на Heroku: https://apartments-backend-api.herokuapp.com/
 
-Репозиторий UI: https://github.com/mirat1618/apartments-api
+Репозиторий UI: https://github.com/mirat1618/apartments-ui
 
 REST API endpoints:
 
